@@ -8,6 +8,6 @@ namespace insuranceApp.Domain.Client
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public List<Insurance.Insurance> Insurances { get; set; }
+        public ICollection<Insurance.Insurance> Insurances { get; set; }
     }
 }

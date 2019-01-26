@@ -5,6 +5,16 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceApp.WebApplications", "InsuranceApp.WebApplications\InsuranceApp.WebApplications.csproj", "{5135C2C5-D722-4AE7-857C-98CB2BD44780}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insuranceApp.Infraestructure", "insuranceApp.Infraestructure\insuranceApp.Infraestructure.csproj", "{F1C01FCB-EF39-400B-9237-C8EC75C9224A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insuranceApp.Domain", "insuranceApp.Domain\insuranceApp.Domain.csproj", "{10BA1A5D-2D0A-4C49-89DE-CEA656837C20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insuranceApp.Application", "insuranceApp.Application\insuranceApp.Application.csproj", "{6D4D114F-1277-4C5C-8B17-28F846FF7EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insuranceApp.WebApi", "insuranceApp.WebApi\insuranceApp.WebApi.csproj", "{00725041-CC36-4CD7-81DA-CA8D1F2EC7AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insuranceApp.WebApi.Tests", "insuranceApp.WebApi.Tests\insuranceApp.WebApi.Tests.csproj", "{8737EA4D-4470-4B27-9DFA-9BBCE24EBF41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{5135C2C5-D722-4AE7-857C-98CB2BD44780}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5135C2C5-D722-4AE7-857C-98CB2BD44780}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5135C2C5-D722-4AE7-857C-98CB2BD44780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1C01FCB-EF39-400B-9237-C8EC75C9224A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C01FCB-EF39-400B-9237-C8EC75C9224A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C01FCB-EF39-400B-9237-C8EC75C9224A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C01FCB-EF39-400B-9237-C8EC75C9224A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10BA1A5D-2D0A-4C49-89DE-CEA656837C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BA1A5D-2D0A-4C49-89DE-CEA656837C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BA1A5D-2D0A-4C49-89DE-CEA656837C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BA1A5D-2D0A-4C49-89DE-CEA656837C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4D114F-1277-4C5C-8B17-28F846FF7EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4D114F-1277-4C5C-8B17-28F846FF7EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4D114F-1277-4C5C-8B17-28F846FF7EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4D114F-1277-4C5C-8B17-28F846FF7EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00725041-CC36-4CD7-81DA-CA8D1F2EC7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00725041-CC36-4CD7-81DA-CA8D1F2EC7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00725041-CC36-4CD7-81DA-CA8D1F2EC7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00725041-CC36-4CD7-81DA-CA8D1F2EC7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8737EA4D-4470-4B27-9DFA-9BBCE24EBF41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8737EA4D-4470-4B27-9DFA-9BBCE24EBF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8737EA4D-4470-4B27-9DFA-9BBCE24EBF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8737EA4D-4470-4B27-9DFA-9BBCE24EBF41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

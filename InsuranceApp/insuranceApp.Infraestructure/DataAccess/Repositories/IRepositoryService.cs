@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace insuranceApp.Infraestructure.DataAccess.Repositories
 {
-    public interface IRepository<TEntity>
+    public interface IRepositoryService<TEntity>
     {
         TEntity Get(int id);
         List<TEntity> GetAll();

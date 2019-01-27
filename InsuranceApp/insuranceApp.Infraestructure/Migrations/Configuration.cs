@@ -1,5 +1,3 @@
-using insuranceApp.Infraestructure.DataAccess;
-
 namespace insuranceApp.Infraestructure.Migrations
 {
     using System;
@@ -7,14 +5,14 @@ namespace insuranceApp.Infraestructure.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<InsuranceAppContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<insuranceApp.Infraestructure.DataAccess.InsuranceAppContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(InsuranceAppContext context)
+        protected override void Seed(insuranceApp.Infraestructure.DataAccess.InsuranceAppContext context)
         {
             //  This method will be called after migrating to the latest version.
 

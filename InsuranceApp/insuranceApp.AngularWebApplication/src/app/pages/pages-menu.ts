@@ -20,7 +20,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
       title: 'Polizas',
       icon: 'nb-home',
-      link: '/pages/insurances'
+      link: '/pages/insurance'
   },
   {
     title: 'Auth',

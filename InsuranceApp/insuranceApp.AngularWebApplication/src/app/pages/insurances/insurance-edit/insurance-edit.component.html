@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>Informacion de la P&oacute;liza</nb-card-header>
+            <nb-card>
+                <nb-card-header>Basic form</nb-card-header>
+                <nb-card-body>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripci&oacute;n</label>
+                            <input type="text" class="form-control" id="description" placeholder="Descripci&oacute;n">
+                        </div>
+                        <div class="form-group">
+                            <label for="coverageType">Tipo de Covertura</label>
+                            <input type="text" class="form-control" id="coverageType" placeholder="Tipo de Covertura">
+                        </div>
+                        <div class="form-group">
+                            <label for="coverage">Covertura (%)</label>
+                            <input type="number" class="form-control" id="coverage" placeholder="Covertura">
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Inicio de Vigencia</label>
+                            <input type="date" class="form-control" id="startDate" placeholder="Inicio de Vigencia">
+                        </div>
+                        <div class="form-group">
+                            <label for="period">Periodo en meses</label>
+                            <input type="number" class="form-control" id="period" placeholder="Periodo en meses">
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Precio</label>
+                            <input type="number" class="form-control" id="price" placeholder="Precio">
+                        </div>
+                        <div class="form-group">
+                            <label for="riskType">Tipo de Riesgo</label>
+                            <input type="text" class="form-control" id="riskType" placeholder="Tipo de Riesgo">
+                        </div>
+                        <a [routerLink]="['/pages/insurance']" class="btn btn-secondary">Atras</a>
+                        <button type="submit" class="btn btn-danger">Salvar</button>
+                    </form>
+                </nb-card-body>
+            </nb-card>
+        </nb-card>
+    </div>
+</div>

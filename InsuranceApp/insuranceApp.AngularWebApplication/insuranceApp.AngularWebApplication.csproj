@@ -112,7 +112,11 @@
     <Content Include="src\app\%40theme\styles\styles.scss" />
     <Content Include="src\app\%40theme\styles\themes.scss" />
     <Content Include="src\app\pages\customers\customer-add\customer-add.component.html" />
+    <Content Include="src\app\pages\customers\customer-edit\customer-edit.component.html" />
     <Content Include="src\app\pages\customers\customer-list\customer-list.component.html" />
+    <Content Include="src\app\pages\insurances\insurance-add\insurance-add.component.html" />
+    <Content Include="src\app\pages\insurances\insurance-edit\insurance-edit.component.html" />
+    <Content Include="src\app\pages\insurances\insurance-list\insurance-list.component.html" />
     <Content Include="src\app\pages\miscellaneous\not-found\not-found.component.scss" />
     <Content Include="src\assets\data\news.json" />
     <Content Include="src\assets\leaflet-countries\countries.geo.json" />
@@ -122,6 +126,9 @@
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="src\app\pages\customers\customer-add\customer-add.component.scss" />
+    <Content Include="src\app\pages\customers\customer-edit\customer-edit.component.scss" />
+    <Content Include="src\app\pages\insurances\insurance-add\insurance-add.component.scss" />
+    <Content Include="src\app\pages\insurances\insurance-edit\insurance-edit.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -178,10 +185,15 @@
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\pages\customers\customer-add\customer-add.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\customers\customer-edit\customer-edit.component.ts" />
     <TypeScriptCompile Include="src\app\pages\customers\customer-list\customer-list.component.ts" />
     <TypeScriptCompile Include="src\app\pages\customers\customer.module.ts" />
     <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\insurances\insurance-add\insurance-add.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\insurances\insurance-edit\insurance-edit.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\insurances\insurance-list\insurance-list.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\insurances\insurance.module.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous-routing.module.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous.component.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous.module.ts" />
@@ -199,8 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\app\%40theme\directives\" />
-    <Folder Include="src\app\pages\customers\customer-edit\" />
-    <Folder Include="src\app\pages\insurances\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

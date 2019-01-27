@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using insuranceApp.Domain.Coverage;
+using insuranceApp.Domain.Risk;
+
 namespace insuranceApp.Infraestructure.Migrations
 {
     using System;
@@ -14,10 +18,24 @@ namespace insuranceApp.Infraestructure.Migrations
 
         protected override void Seed(insuranceApp.Infraestructure.DataAccess.InsuranceAppContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var coverageTypes = new List<CoverageType>
+            {
+                new CoverageType {Name = "Terremoto"},
+                new CoverageType {Name = "Incendio"},
+                new CoverageType {Name = "Robo"},
+                new CoverageType {Name = "Pérdida"}
+            };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            var riskTypes = new List<RiskType>
+            {
+                new RiskType {Name = "Bajo"},
+                new RiskType {Name = "Medio"},
+                new RiskType {Name = "Medio-Alto"},
+                new RiskType {Name = "Alto"}
+            };
+
+            context.CoverageTypes.AddRange(coverageTypes);
+            context.RiskTypes.AddRange(riskTypes);
         }
     }
 }

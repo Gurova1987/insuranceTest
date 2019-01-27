@@ -53,6 +53,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\insuranceApp.Domain\insuranceApp.Domain.csproj">
+      <Project>{10BA1A5D-2D0A-4C49-89DE-CEA656837C20}</Project>
+      <Name>insuranceApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\insuranceApp.Infraestructure\insuranceApp.Infraestructure.csproj">
+      <Project>{F1C01FCB-EF39-400B-9237-C8EC75C9224A}</Project>
+      <Name>insuranceApp.Infraestructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

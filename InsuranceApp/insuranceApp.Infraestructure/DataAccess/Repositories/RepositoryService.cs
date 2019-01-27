@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace insuranceApp.Infraestructure.DataAccess.Repositories
 {
-    public class Repository<TEntity> : IRepositoryService<TEntity> where TEntity : class
+    public class RepositoryService<TEntity> : IRepositoryService<TEntity> where TEntity : class
     {
         private readonly DbContext _dbContext;
         private readonly IDbSet<TEntity> _entities;
         private string _errorMessage = string.Empty;
 
-        protected Repository(DbContext dbContext)
+        public RepositoryService(DbContext dbContext)
         {
             _dbContext = dbContext;
             _entities = _dbContext.Set<TEntity>();

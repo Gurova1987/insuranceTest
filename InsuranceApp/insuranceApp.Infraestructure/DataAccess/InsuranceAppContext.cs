@@ -1,10 +1,10 @@
 ﻿using System.Data.Entity;
-using insuranceApp.Domain.Client;
 using insuranceApp.Domain.Coverage;
+using insuranceApp.Domain.Customer;
 using insuranceApp.Domain.Insurance;
 using insuranceApp.Domain.Risk;
 
-namespace insuranceApp.Infraestructure
+namespace insuranceApp.Infraestructure.DataAccess
 {
     public class InsuranceAppContext: DbContext
     {
@@ -13,7 +13,7 @@ namespace insuranceApp.Infraestructure
             Database.SetInitializer(new CreateDatabaseIfNotExists<InsuranceAppContext>());
         }
 
-        public DbSet<Client> Clients { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Insurance> Insurances { get; set; }
         public DbSet<RiskType> RiskTypes { get; set; }
         public DbSet<CoverageType> CoverageTypes { get; set; }

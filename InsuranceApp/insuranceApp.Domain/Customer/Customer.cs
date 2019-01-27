@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace insuranceApp.Domain.Client
+namespace insuranceApp.Domain.Customer
 {
-    public class Client
+    public class Customer
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

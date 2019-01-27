@@ -103,12 +103,20 @@
     <Content Include="angular.json" />
     <Content Include="e2e\tsconfig.e2e.json" />
     <Content Include="package.json" />
-    <Content Include="src\app\app.component.sass" />
-    <Content Include="src\browserslist" />
-    <Content Include="src\styles.sass" />
+    <Content Include="src\app\%40theme\components\footer\footer.component.scss" />
+    <Content Include="src\app\%40theme\components\header\header.component.scss" />
+    <Content Include="src\app\%40theme\layouts\sample\layout.scss" />
+    <Content Include="src\app\%40theme\styles\bootstrap-rtl.scss" />
+    <Content Include="src\app\%40theme\styles\font-size.scss" />
+    <Content Include="src\app\%40theme\styles\pace.theme.scss" />
+    <Content Include="src\app\%40theme\styles\styles.scss" />
+    <Content Include="src\app\%40theme\styles\themes.scss" />
+    <Content Include="src\app\pages\miscellaneous\not-found\not-found.component.scss" />
+    <Content Include="src\assets\data\news.json" />
+    <Content Include="src\assets\leaflet-countries\countries.geo.json" />
+    <Content Include="src\assets\map\world.json" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
-    <Content Include="src\tslint.json" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <None Include="Web.Debug.config">
@@ -119,34 +127,68 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="e2e\protractor.conf.js" />
-    <Content Include="src\app\app.component.html" />
+    <Content Include="karma.conf.js" />
+    <Content Include="protractor.conf.js" />
+    <Content Include="src\app\%40theme\components\header\header.component.html" />
+    <Content Include="src\app\pages\dashboard\dashboard.component.html" />
+    <Content Include="src\app\pages\miscellaneous\not-found\not-found.component.html" />
+    <Content Include="src\assets\images\alan.png" />
+    <Content Include="src\assets\images\eva.png" />
+    <Content Include="src\assets\images\jack.png" />
+    <Content Include="src\assets\images\kate.png" />
+    <Content Include="src\assets\images\kitten-corporate.png" />
+    <Content Include="src\assets\images\lee.png" />
+    <Content Include="src\assets\images\nick.png" />
     <Content Include="src\favicon.ico" />
+    <Content Include="src\favicon.png" />
     <Content Include="src\index.html" />
-    <Content Include="src\karma.conf.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="e2e\src\app.e2e-spec.ts" />
-    <TypeScriptCompile Include="e2e\src\app.po.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\%40theme\components\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\header\header.component.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\components\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\layouts\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\layouts\sample\layout.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\capitalize.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\eva-icons.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\index.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\number-with-commas.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\plural.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\round.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\pipes\timing.pipe.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.corporate.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.cosmic.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\styles\theme.default.ts" />
+    <TypeScriptCompile Include="src\app\%40theme\theme.module.ts" />
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\miscellaneous\not-found\not-found.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages-menu.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages-routing.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\test.ts" />
+    <TypeScriptCompile Include="src\typings.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\assets\" />
+    <Folder Include="src\app\%40theme\directives\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

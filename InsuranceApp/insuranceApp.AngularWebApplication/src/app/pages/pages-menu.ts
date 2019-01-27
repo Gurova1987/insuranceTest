@@ -1,15 +1,26 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+  //{
+  //  title: 'Dashboard',
+  //  icon: 'nb-home',
+  //  link: '/pages/dashboard',
+  //  home: true,
+  //},
+    {
+        title: 'Administrar',
+        group: true,
+    },
   {
-    title: 'Dashboard',
-    icon: 'nb-home',
-    link: '/pages/dashboard',
-    home: true,
+    title: 'Clientes',
+    icon: 'nb-person',
+    link: '/pages/customers',
+    home: true
   },
   {
-    title: 'FEATURES',
-    group: true,
+      title: 'Polizas',
+      icon: 'nb-home',
+      link: '/pages/insurances'
   },
   {
     title: 'Auth',

@@ -18,11 +18,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                    <tr *ngFor='let customer of _customers; trackBy: index;'>
 
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>@mdo</td>
+                        <td>{{customer.Id}}</td>
+                        <td>{{customer.FirstName}}</td>
+                        <td>{{customer.LastName}}</td>
                         <td style="max-width: 40px">
                             <div class="btn-group-sm">
                                 <a class="btn btn-secondary btn-sm mx-1 my-1" [routerLink]="['pages/customers/edit']"><span> Edit</span></a>

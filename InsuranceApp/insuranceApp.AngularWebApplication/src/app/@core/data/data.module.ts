@@ -2,9 +2,13 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserService } from './users.service';
+import { CustomerService } from './customers.service';
+import { ConfigService } from './config.service';
 
 const SERVICES = [
-  UserService
+    UserService,
+    CustomerService,
+    ConfigService
 ];
 
 @NgModule({

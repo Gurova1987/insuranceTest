@@ -129,6 +129,8 @@
     <Content Include="src\app\pages\customers\customer-edit\customer-edit.component.scss" />
     <Content Include="src\app\pages\insurances\insurance-add\insurance-add.component.scss" />
     <Content Include="src\app\pages\insurances\insurance-edit\insurance-edit.component.scss" />
+    <Content Include="src\assets\config.json" />
+    <Content Include="config.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,9 +164,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\%40core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\config.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\customers.service.ts" />
     <TypeScriptCompile Include="src\app\%40core\data\data.module.ts" />
-    <TypeScriptCompile Include="src\app\%40core\data\smart-table.ts" />
     <TypeScriptCompile Include="src\app\%40core\data\users.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\models\genericModels.ts" />
     <TypeScriptCompile Include="src\app\%40theme\components\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\%40theme\components\header\header.component.ts" />
     <TypeScriptCompile Include="src\app\%40theme\components\index.ts" />

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-
+import { HttpModule } from '@angular/http';
 import { ThemeModule } from '../../@theme/theme.module';
 import { RouterModule } from '@angular/router';
 import { CustomerListComponent } from './customer-list/customer-list.component';
@@ -10,7 +10,8 @@ import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 @NgModule({
   imports: [
       ThemeModule,
-      RouterModule
+      RouterModule,
+      HttpModule
   ],
   declarations: [
       CustomerListComponent,

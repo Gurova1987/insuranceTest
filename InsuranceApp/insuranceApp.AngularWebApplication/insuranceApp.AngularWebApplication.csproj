@@ -111,6 +111,8 @@
     <Content Include="src\app\%40theme\styles\pace.theme.scss" />
     <Content Include="src\app\%40theme\styles\styles.scss" />
     <Content Include="src\app\%40theme\styles\themes.scss" />
+    <Content Include="src\app\pages\customers\customer-add\customer-add.component.html" />
+    <Content Include="src\app\pages\customers\customer-list\customer-list.component.html" />
     <Content Include="src\app\pages\miscellaneous\not-found\not-found.component.scss" />
     <Content Include="src\assets\data\news.json" />
     <Content Include="src\assets\leaflet-countries\countries.geo.json" />
@@ -119,6 +121,7 @@
     <Content Include="src\tsconfig.spec.json" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
+    <Content Include="src\app\pages\customers\customer-add\customer-add.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,6 +154,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\%40core\core.module.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\data.module.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\smart-table.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\users.service.ts" />
     <TypeScriptCompile Include="src\app\%40theme\components\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\%40theme\components\header\header.component.ts" />
     <TypeScriptCompile Include="src\app\%40theme\components\index.ts" />
@@ -170,6 +177,9 @@
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\customers\customer-add\customer-add.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\customers\customer-list\customer-list.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\customers\customer.module.ts" />
     <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\pages\dashboard\dashboard.module.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous-routing.module.ts" />
@@ -189,6 +199,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\app\%40theme\directives\" />
+    <Folder Include="src\app\pages\customers\customer-edit\" />
+    <Folder Include="src\app\pages\insurances\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -9,11 +9,9 @@ import {
   NbThemeService,
 } from '@nebular/theme';
 
-import { StateService } from '../../../@core/data/state.service';
 
-// TODO: move layouts into the framework
 @Component({
-  selector: 'ngx-sample-layout',
+  selector: 'main-layout',
   styleUrls: ['./layout.scss'],
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
@@ -72,20 +70,11 @@ export class LayoutComponent implements OnDestroy {
 
   currentTheme: string;
 
-  constructor(protected stateService: StateService,
-              protected menuService: NbMenuService,
+  constructor(protected menuService: NbMenuService,
               protected themeService: NbThemeService,
               protected bpService: NbMediaBreakpointsService,
               protected sidebarService: NbSidebarService) {
-    this.stateService.onLayoutState()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((layout: string) => this.layout = layout);
-
-    this.stateService.onSidebarState()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe((sidebar: string) => {
-        this.sidebar = sidebar;
-      });
+    
 
     const isBp = this.bpService.getByName('is');
     this.menuService.onItemSelect()

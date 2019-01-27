@@ -39,13 +39,7 @@ import { NbSecurityModule } from '@nebular/security';
 
 import {
   FooterComponent,
-  HeaderComponent,
-  SearchInputComponent,
-  ThemeSettingsComponent,
-  SwitcherComponent,
-  LayoutDirectionSwitcherComponent,
-  ThemeSwitcherComponent,
-  ThemeSwitcherListComponent,
+  HeaderComponent
 } from './components';
 import {
   CapitalizePipe,

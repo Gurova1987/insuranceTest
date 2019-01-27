@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using insuranceApp.Domain.Customer;
 using insuranceApp.Infraestructure.DataAccess.Repositories;
 
@@ -8,7 +7,7 @@ namespace insuranceApp.Application.Customers
 {
     public class CustomerService: ICustomerService
     {
-        private IRepositoryService<Customer> _customerRepository;
+        private readonly IRepositoryService<Customer> _customerRepository;
 
         public CustomerService(IRepositoryService<Customer> customerRepository)
         {
@@ -17,27 +16,32 @@ namespace insuranceApp.Application.Customers
 
         public List<CustomerDto> GetAll()
         {
-            return (List<CustomerDto>) _customerRepository.GetAll().Select( x => new CustomerDto { FirstName = "Test" });
+            var customers = _customerRepository.GetAll();
+            return Mapper.Map<List<CustomerDto>>(customers);
         }
 
         public CustomerDto Get(int id)
         {
-            throw new NotImplementedException();
+            var customer = _customerRepository.Get(id);
+            return Mapper.Map<CustomerDto>(customer);
         }
 
         public void Create(CustomerDto model)
         {
-            throw new NotImplementedException();
+            var customerEntity = Mapper.Map<Customer>(model);
+            _customerRepository.Add(customerEntity);
         }
 
         public void Update(CustomerDto model)
         {
-            throw new NotImplementedException();
+            var customerEntity = Mapper.Map<Customer>(model);
+            _customerRepository.Update(customerEntity);
         }
 
         public void Delete(CustomerDto model)
         {
-            throw new NotImplementedException();
+            var customerEntity = Mapper.Map<Customer>(model);
+            _customerRepository.Remove(customerEntity);
         }
     }
 }

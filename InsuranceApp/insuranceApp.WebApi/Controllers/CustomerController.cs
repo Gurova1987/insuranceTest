@@ -1,15 +1,12 @@
 ﻿using insuranceApp.Application.Customers;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
-using insuranceApp.Domain.Customer;
-using insuranceApp.Infraestructure.DataAccess;
 
 namespace insuranceApp.WebApi.Controllers
 {
     public class CustomerController : ApiController
     {
-        private ICustomerService _customerService;
+        private readonly ICustomerService _customerService;
 
         public CustomerController(ICustomerService customerService)
         {
@@ -17,9 +14,9 @@ namespace insuranceApp.WebApi.Controllers
         }
 
         // GET: api/Customer
-        public IEnumerable<string> Get()
+        public IEnumerable<CustomerDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _customerService.GetAll();
         }
 
         // GET: api/Customer/5
@@ -29,18 +26,21 @@ namespace insuranceApp.WebApi.Controllers
         }
 
         // POST: api/Customer
-        public void Post([FromBody]string value)
+        public void Post([FromBody]CustomerDto model)
         {
+            _customerService.Create(model);
         }
 
         // PUT: api/Customer/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]CustomerDto model)
         {
+            _customerService.Update(model);
         }
 
         // DELETE: api/Customer/5
-        public void Delete(int id)
+        public void Delete(CustomerDto model)
         {
+            _customerService.Delete(model);
         }
     }
 }

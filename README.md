@@ -31,7 +31,7 @@ This app is a monolithic application composed of NLayer Modules following common
     - Run command: 'ng serve'
     - Application should start in 'http://localhost:4200'
 
-# Additional Notes:
+#### Additional Notes:
     - You can find service files in 'src/app/@core/data'
     - Main components are located: 'src/app/pages'
 

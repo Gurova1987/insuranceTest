@@ -41,7 +41,7 @@ namespace insuranceApp.Application.Customers
         public void Delete(CustomerDto model)
         {
             var customerEntity = Mapper.Map<Customer>(model);
-            _customerRepository.Remove(customerEntity);
+            _customerRepository.Remove(customerEntity.Id);
         }
     }
 }

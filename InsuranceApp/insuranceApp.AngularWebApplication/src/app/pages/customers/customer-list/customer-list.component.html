@@ -18,15 +18,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor='let customer of _customers; trackBy: index;'>
+                    <tr *ngFor='let customer of customers; trackBy: index;'>
 
                         <td>{{customer.Id}}</td>
                         <td>{{customer.FirstName}}</td>
                         <td>{{customer.LastName}}</td>
                         <td style="max-width: 40px">
                             <div class="btn-group-sm">
-                                <a class="btn btn-secondary btn-sm mx-1 my-1" [routerLink]="['pages/customers/edit']"><span> Edit</span></a>
-                                <a class="btn btn-warning btn-sm mx-1 my-1"><span> Delete</span></a>
+                                <a class="btn btn-secondary btn-sm mx-1 my-1" [routerLink]="['edit/' + customer.Id]"><span> Edit</span></a>
+                                <a class="btn btn-warning btn-sm mx-1 my-1" (click)="onDeleteConfirm(customer.Id)"><span> Delete</span></a>
                             </div>
                         </td>
                     </tr>

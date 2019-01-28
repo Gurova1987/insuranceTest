@@ -90,15 +90,12 @@ namespace insuranceApp.Infraestructure.DataAccess.Repositories
             throw new NotImplementedException();
         }
         
-        public void Remove(TEntity entity)
+        public void Remove(int id)
         {
             try
             {
-                if (entity == null)
-                {
-                    throw new ArgumentNullException(nameof(entity));
-                }
-                _entities.Remove(entity);
+                var entityToRemove = _entities.Find(id);
+                _entities.Remove(entityToRemove);
                 _dbContext.SaveChanges();
             }
             catch (DbEntityValidationException dbEx)

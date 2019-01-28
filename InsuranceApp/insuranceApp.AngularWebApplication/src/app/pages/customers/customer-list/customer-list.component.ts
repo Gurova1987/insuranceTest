@@ -11,23 +11,22 @@ import { ConfigSite } from '../../../@core/models/genericModels';
 })
 export class CustomerListComponent implements OnInit {
 
-    _customers: any = [];
-    _configData: ConfigSite;
+    customers: any = [];
+    configData: ConfigSite;
 
-    constructor(private _http: Http,
-        private _CustomerService: CustomerService,
-        private _Config: ConfigService,
+    constructor(private http: Http,
+        private customerService: CustomerService,
+        private config: ConfigService,
         private route: ActivatedRoute,
         private router: Router) {
     }
 
     ngOnInit() {
-
         //this._usertoken = JSON.parse(localStorage.getItem('btclogin'));
-        this._Config.GetConfig()
+        this.config.GetConfig()
             .subscribe(
                 data => {
-                    this._configData = data;
+                    this.configData = data;
                     this.getCustomers();
                 },
                 error => {
@@ -37,22 +36,28 @@ export class CustomerListComponent implements OnInit {
     }
 
     getCustomers() {
-        this._CustomerService.GetCustomers(this._configData.WebApiUrl)
+        this.customerService.getCustomers(this.configData.WebApiUrl)
             .subscribe(
                 data => {
-                    this._customers = data;
+                    this.customers = data;
                 },
                 error => {
-                    console.log('Hubo un problema cargar los emisores de este usuario.');
+                    console.log('Hubo un problema al cargar los clientes.');
                 }
             );
     }
 
-    onDeleteConfirm(event): void {
+    onDeleteConfirm(id): void {
         if (window.confirm('Esta seguro de eliminar el cliente seleccionado?')) {
-            event.confirm.resolve();
-        } else {
-            event.confirm.reject();
+            this.customerService.deleteCustomer(this.configData.WebApiUrl, id)
+                .subscribe(
+                    data => {
+                        this.getCustomers();
+                    },
+                    error => {
+                        console.log('Hubo un problema al eliminar el cliente.');
+                    }
+                );
         }
     }
 }

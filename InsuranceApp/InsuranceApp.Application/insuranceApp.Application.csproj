@@ -52,11 +52,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoverageTypes\ICoverageTypeService.cs" />
+    <Compile Include="CoverageTypes\CoverageTypeDto.cs" />
+    <Compile Include="CoverageTypes\CoverageTypeService.cs" />
     <Compile Include="Customers\CustomerDto.cs" />
     <Compile Include="Customers\CustomerService.cs" />
     <Compile Include="Customers\ICustomerService.cs" />
     <Compile Include="InsuranceAppApplicationModule.cs" />
+    <Compile Include="Insurance\InsuranceDto.cs" />
+    <Compile Include="Insurance\InsuranceService.cs" />
+    <Compile Include="Insurance\IInsuranceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RiskTypes\IRiskTypeService.cs" />
+    <Compile Include="RiskTypes\RiskTypeDto.cs" />
+    <Compile Include="RiskTypes\RiskTypeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -71,9 +80,7 @@
       <Name>insuranceApp.Infraestructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Insurance\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

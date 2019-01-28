@@ -17,5 +17,6 @@ namespace insuranceApp.Infraestructure.DataAccess
         public DbSet<Insurance> Insurances { get; set; }
         public DbSet<RiskType> RiskTypes { get; set; }
         public DbSet<CoverageType> CoverageTypes { get; set; }
+        public DbSet<CustomerInsurances> CustomerInsurances { get; set; }
     }
 }

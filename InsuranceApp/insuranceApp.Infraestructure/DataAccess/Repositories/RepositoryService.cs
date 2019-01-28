@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,8 +54,7 @@ namespace insuranceApp.Infraestructure.DataAccess.Repositories
                 {
                     throw new ArgumentNullException(nameof(entity));
                 }
-                
-                _dbContext.Entry(entity).State = EntityState.Modified;
+                _entities.AddOrUpdate(entity);
                 _dbContext.SaveChanges();
             }
             catch (DbEntityValidationException dbEx)
@@ -77,9 +77,14 @@ namespace insuranceApp.Infraestructure.DataAccess.Repositories
             return _entities.Find(id);
         }
 
-        public List<TEntity> GetAll()
+        public List<TEntity> GetAll(bool includeChildren = false)
         {
-            return _entities.ToList();
+            return includeChildren ? IncludeAll(_entities.AsQueryable()).ToList() : _entities.ToList();
+        }
+
+        public List<TEntity> GetAllByCondition(Func<TEntity, bool> condition)
+        {
+            return IncludeAll(_entities.AsQueryable()).Where(condition).ToList();
         }
 
         public Task<List<TEntity>> GetAllAsync()
@@ -113,6 +118,16 @@ namespace insuranceApp.Infraestructure.DataAccess.Repositories
                 }
                 throw new Exception(_errorMessage, dbEx);
             }
+        }
+
+        private IQueryable<TEntity> IncludeAll(IQueryable<TEntity> queryable)
+        {
+            var type = typeof(TEntity);
+            var properties = type.GetProperties();
+            return (from property in properties
+                let isVirtual = property.GetGetMethod().IsVirtual
+                where isVirtual && properties.FirstOrDefault(c => c.Name == property.Name + "Id") != null
+                select property).Aggregate(queryable, (current, property) => current.Include(property.Name));
         }
     }
 }

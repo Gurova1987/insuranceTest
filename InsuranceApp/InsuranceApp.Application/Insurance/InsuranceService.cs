@@ -15,7 +15,7 @@ namespace insuranceApp.Application.Insurance
 
         public List<InsuranceDto> GetAll()
         {
-            var customers = _insuranceRepository.GetAll();
+            var customers = _insuranceRepository.GetAll(true);
             return Mapper.Map<List<InsuranceDto>>(customers);
         }
 

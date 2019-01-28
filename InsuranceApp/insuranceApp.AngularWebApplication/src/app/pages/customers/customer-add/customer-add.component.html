@@ -19,14 +19,8 @@
             <nb-card-body>
                 <div class="row">
                     <div class="insurance-options col-sm-12 text-center">
-                        <nb-checkbox>Checkbox 1</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 2</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 3</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 4</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 5</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 6</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 7</nb-checkbox>
-                        <nb-checkbox [value]="true">Checkbox 8</nb-checkbox>
+                        <nb-checkbox [value]="insurance.Selected" [(ngModel)]="insurance.Selected" *ngFor='let insurance of insurances; trackBy: index;'>{{insurance.Name}}</nb-checkbox>
+                        <span *ngIf="!(insurances && insurances.length)">No se encontraron Polizas en el sistema</span>
                     </div>
                 </div>
             </nb-card-body>

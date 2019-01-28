@@ -45,6 +45,7 @@ export class Insurance {
     Coverage: number;
     CoverageTypeId: number;
     CoverageType: CoverageType;
+    Selected: boolean;
 }
 
 export class CustomerModel {

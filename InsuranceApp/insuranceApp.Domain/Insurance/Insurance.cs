@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using insuranceApp.Domain.Coverage;
 using insuranceApp.Domain.Risk;
 
@@ -13,9 +14,9 @@ namespace insuranceApp.Domain.Insurance
         public int TermInMonths { get; set; }
         public decimal Price { get; set; }
         public int RiskTypeId { get; set; }
-        public RiskType RiskType { get; set; }
+        public virtual RiskType RiskType { get; set; }
         public int CoverageTypeId { get; set; }
         public decimal Coverage { get; set; }
-        public CoverageType CoverageType { get; set; }
+        public virtual CoverageType CoverageType { get; set; }
     }
 }

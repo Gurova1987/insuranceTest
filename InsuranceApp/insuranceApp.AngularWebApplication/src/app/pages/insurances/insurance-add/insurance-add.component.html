@@ -4,45 +4,87 @@
             <nb-card-header>Informacion de la P&oacute;liza</nb-card-header>
             <nb-card>
                 <nb-card-body>
-                    <form name="form" (ngSubmit)="f.form.valid && saveInsurance(f.form.valid)" #f="ngForm" novalidate >
+                    <form name="form" (ngSubmit)="f.form.valid && saveInsurance(f.form.valid)" #f="ngForm" novalidate>
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" [(ngModel)]="model.Name">
+                            <input required type="text" class="form-control" #name="ngModel" id="name" name="name" placeholder="Nombre" [(ngModel)]="model.Name">
+                            <div *ngIf="f.submitted && !name.valid" class="alert alert-danger">
+                                <div *ngIf="name.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="description">Descripci&oacute;n</label>
-                            <input type="text" class="form-control" name="description" id="description" placeholder="Descripci&oacute;n" [(ngModel)]="model.Description">
+                            <input required type="text" class="form-control" #description="ngModel" name="description" id="description" placeholder="Descripci&oacute;n" [(ngModel)]="model.Description">
+                            <div *ngIf="f.submitted && !description.valid" class="alert alert-danger">
+                                <div *ngIf="description.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="coverageType">Tipo de Covertura</label>
-                            <select id="coverageType" name="coverageType" placeholder="Tipo de Covertura" class="form-control" [(ngModel)]="model.CoverageTypeId" #CoverageTypeId="ngModel">
+                            <select required id="coverageType" #coverageType="ngModel" name="coverageType" placeholder="Tipo de Covertura" class="form-control" [(ngModel)]="model.CoverageTypeId" #CoverageTypeId="ngModel">
                                 <option *ngFor="let type of coverageTypes" value={{type.Id}}>{{type.Name}}</option>
                             </select>
+                            <div *ngIf="f.submitted && !coverageType.valid" class="alert alert-danger">
+                                <div *ngIf="coverageType.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="coverage">Covertura (%)</label>
-                            <input type="number" class="form-control" name="coverage" id="coverage" placeholder="Covertura" [(ngModel)]="model.Coverage">
+                            <input required type="number" class="form-control" #coverage="ngModel" name="coverage" id="coverage" placeholder="Covertura" [(ngModel)]="model.Coverage">
+                            <div *ngIf="f.submitted && !coverage.valid" class="alert alert-danger">
+                                <div *ngIf="coverage.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="startDate">Inicio de Vigencia</label>
-                            <input type="date" class="form-control" name="startDate" id="startDate" placeholder="Inicio de Vigencia" [(ngModel)]="model.StartDate">
+                            <input required type="date" class="form-control" #startDate="ngModel" name="startDate" id="startDate" placeholder="Inicio de Vigencia" [(ngModel)]="model.StartDate">
+                            <div *ngIf="f.submitted && !startDate.valid" class="alert alert-danger">
+                                <div *ngIf="startDate.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="period">Periodo en meses</label>
-                            <input type="number" class="form-control" name="period" id="period" placeholder="Periodo en meses" [(ngModel)]="model.TermInMonths">
+                            <input type="number" class="form-control" #period="ngModel" name="period" id="period" placeholder="Periodo en meses" [(ngModel)]="model.TermInMonths">
+                            <div *ngIf="f.submitted && !period.valid" class="alert alert-danger">
+                                <div *ngIf="period.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="price">Precio</label>
-                            <input type="number" class="form-control" name="price" id="price" placeholder="Precio" [(ngModel)]="model.Price">
+                            <input required type="number" class="form-control" #price="ngModel" name="price" id="price" placeholder="Precio" [(ngModel)]="model.Price">
+                            <div *ngIf="f.submitted && !price.valid" class="alert alert-danger">
+                                <div *ngIf="price.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="riskType">Tipo de Riesgo</label>
-                            <select name="riskType" id="riskType" placeholder="Tipo de Covertura" class="form-control" [(ngModel)]="model.RiskTypeId" #RiskTypeId="ngModel">
+                            <select required name="RiskTypeId" id="RiskTypeId" placeholder="Tipo de Covertura" class="form-control" [(ngModel)]="model.RiskTypeId" #RiskTypeId="ngModel">
                                 <option *ngFor="let type of riskTypes" value={{type.Id}}>{{type.Name}}</option>
                             </select>
+                            <div *ngIf="f.submitted && !RiskTypeId.valid" class="alert alert-danger">
+                                <div *ngIf="RiskTypeId.errors.required">
+                                    Campo requerido.
+                                </div>
+                            </div>
                         </div>
-                        <a [routerLink]="['/pages/insurance']" class="btn btn-secondary mx-1 my-1">Atras</a>
-                        <button type="submit" class="btn btn-danger mx-1 my-1">Salvar</button>
+                        <div class="btn-group-sm">
+                            <button type="submit" class="btn btn-success mx-1 my-1 float-right">Salvar</button>
+                            <a [routerLink]="['/pages/insurance']" class="btn btn-secondary mx-1 my-1 float-right">Atras</a>
+                        </div>
                     </form>
                 </nb-card-body>
             </nb-card>

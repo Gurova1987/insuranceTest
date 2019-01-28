@@ -4,11 +4,17 @@ import { CommonModule } from '@angular/common';
 import { UserService } from './users.service';
 import { CustomerService } from './customers.service';
 import { ConfigService } from './config.service';
+import { CoverageTypeService } from './coverageTypes.service';
+import { RiskTypeService } from './riskTypes.service';
+import { InsuranceService } from './insurance.service';
 
 const SERVICES = [
     UserService,
     CustomerService,
-    ConfigService
+    ConfigService,
+    CoverageTypeService,
+    RiskTypeService,
+    InsuranceService
 ];
 
 @NgModule({

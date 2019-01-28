@@ -24,21 +24,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-
-                        <td>1</td>
-                        <td>texto</td>
-                        <td>texto</td>
-                        <td>texto</td>
-                        <td>texto</td>
-                        <td>texto</td>
-                        <td>texto</td>
-                        <td>texto</td>
-                        <td>texto</td>
+                    <tr *ngFor='let insurance of insurances; trackBy: index;'>
+                        <td>{{insurance.Id}}</td>
+                        <td>{{insurance.Name}}</td>
+                        <td>{{insurance.Description}}</td>
+                        <td>{{insurance.CoverageType?.Name}}</td>
+                        <td>{{insurance.Coverage}}</td>
+                        <td>{{insurance.StartDate | date}}</td>
+                        <td>{{insurance.TermInMonths}}</td>
+                        <td>{{insurance.Price | currency}}</td>
+                        <td>{{insurance.RiskType?.Name}}</td>
                         <td>
                             <div class="btn-group-sm">
-                                <a class="btn btn-secondary btn-sm mx-1 my-1" [routerLink]="['/pages/insurance/edit']"><span> Edit</span></a>
-                                <a class="btn btn-warning btn-sm mx-1 my-1"><span> Delete</span></a>
+                                <a class="btn btn-secondary btn-sm mx-1 my-1" [routerLink]="['edit/' + insurance.Id]"><span> Edit</span></a>
+                                <a class="btn btn-warning btn-sm mx-1 my-1" (click)="onDeleteConfirm(insurance.Id)"><span> Delete</span></a>
                             </div>
                         </td>
                     </tr>

@@ -3,40 +3,43 @@
         <nb-card>
             <nb-card-header>Informacion de la P&oacute;liza</nb-card-header>
             <nb-card>
-                <nb-card-header>Basic form</nb-card-header>
                 <nb-card-body>
-                    <form>
+                    <form name="form" (ngSubmit)="f.form.valid && updateInsurance(f.form.valid)" #f="ngForm" novalidate>
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nombre">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" [(ngModel)]="model.Name">
                         </div>
                         <div class="form-group">
                             <label for="description">Descripci&oacute;n</label>
-                            <input type="text" class="form-control" id="description" placeholder="Descripci&oacute;n">
+                            <input type="text" class="form-control" name="description" id="description" placeholder="Descripci&oacute;n" [(ngModel)]="model.Description">
                         </div>
                         <div class="form-group">
                             <label for="coverageType">Tipo de Covertura</label>
-                            <input type="text" class="form-control" id="coverageType" placeholder="Tipo de Covertura">
+                            <select id="coverageType" name="coverageType" placeholder="Tipo de Covertura" class="form-control" [(ngModel)]="model.CoverageTypeId" #CoverageTypeId="ngModel">
+                                <option *ngFor="let type of coverageTypes" value={{type.Id}}>{{type.Name}}</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="coverage">Covertura (%)</label>
-                            <input type="number" class="form-control" id="coverage" placeholder="Covertura">
+                            <input type="number" class="form-control" name="coverage" id="coverage" placeholder="Covertura" [(ngModel)]="model.Coverage">
                         </div>
                         <div class="form-group">
                             <label for="startDate">Inicio de Vigencia</label>
-                            <input type="date" class="form-control" id="startDate" placeholder="Inicio de Vigencia">
+                            <input type="date" class="form-control" name="startDate" id="startDate" placeholder="Inicio de Vigencia" [(ngModel)]="model.StartDate">
                         </div>
                         <div class="form-group">
                             <label for="period">Periodo en meses</label>
-                            <input type="number" class="form-control" id="period" placeholder="Periodo en meses">
+                            <input type="number" class="form-control" name="period" id="period" placeholder="Periodo en meses" [(ngModel)]="model.TermInMonths">
                         </div>
                         <div class="form-group">
                             <label for="price">Precio</label>
-                            <input type="number" class="form-control" id="price" placeholder="Precio">
+                            <input type="number" class="form-control" name="price" id="price" placeholder="Precio" [(ngModel)]="model.Price">
                         </div>
                         <div class="form-group">
                             <label for="riskType">Tipo de Riesgo</label>
-                            <input type="text" class="form-control" id="riskType" placeholder="Tipo de Riesgo">
+                            <select name="riskType" id="riskType" placeholder="Tipo de Covertura" class="form-control" [(ngModel)]="model.RiskTypeId" #RiskTypeId="ngModel">
+                                <option *ngFor="let type of riskTypes" value={{type.Id}}>{{type.Name}}</option>
+                            </select>
                         </div>
                         <a [routerLink]="['/pages/insurance']" class="btn btn-secondary mx-1 my-1">Atras</a>
                         <button type="submit" class="btn btn-danger mx-1 my-1">Salvar</button>

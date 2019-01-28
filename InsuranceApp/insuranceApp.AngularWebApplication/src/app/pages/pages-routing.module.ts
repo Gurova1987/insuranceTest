@@ -35,7 +35,7 @@ const routes: Routes = [{
         component: InsuranceAddComponent
     },
     {
-        path: 'insurance/edit',
+        path: 'insurance/edit/:id',
         component: InsuranceEditComponent
     },
     {

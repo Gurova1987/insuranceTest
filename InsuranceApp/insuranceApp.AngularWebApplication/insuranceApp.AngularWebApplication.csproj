@@ -165,6 +165,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="src\app\%40core\core.module.ts" />
     <TypeScriptCompile Include="src\app\%40core\data\config.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\coverageTypes.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\riskTypes.service.ts" />
+    <TypeScriptCompile Include="src\app\%40core\data\insurance.service.ts" />
     <TypeScriptCompile Include="src\app\%40core\data\customers.service.ts" />
     <TypeScriptCompile Include="src\app\%40core\data\data.module.ts" />
     <TypeScriptCompile Include="src\app\%40core\data\users.service.ts" />

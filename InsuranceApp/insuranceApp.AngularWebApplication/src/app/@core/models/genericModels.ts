@@ -40,8 +40,10 @@ export class Insurance {
     StartDate: string;
     TermInMonths: number;
     Price: number;
+    RiskTypeId: number;
     RiskType: RiskType;
     Coverage: number;
+    CoverageTypeId: number;
     CoverageType: CoverageType;
 }
 

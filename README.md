@@ -19,8 +19,7 @@ This app is a monolithic application composed of NLayer Modules following common
     - Use 'NuGet Package Manager Console' and run command 'Update-database'  
   - Publish 'insuranceApp.WebApi' into a local IIS or host server (We need WebApi url to setup the client)
 
-  ## Client Installation
-
+## Client Installation
   The client has been built using https://akveo.github.io/ngx-admin/ template, is a dashboard based on Angular 7+, Bootstrap 4+ and Nebular
 
     - Requirements
@@ -31,6 +30,10 @@ This app is a monolithic application composed of NLayer Modules following common
     - Run command: 'npm install' in the root of 'insuranceApp.AngularWebApplication'
     - Run command: 'ng serve'
     - Application should start in 'http://localhost:4200'
+
+# Additional Notes:
+    - You can find service files in 'src/app/@core/data'
+    - Main components are located: 'src/app/pages'
 
 ## Incomplete Areas
   - Unit Test couldn't be completed due to the time constraint, including UT for .Net and Angular

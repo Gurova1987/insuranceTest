@@ -10,6 +10,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { CoreModule } from './@core/core.module';
+import { LoginModule } from './pages/login/login.module';
+import { RegisterModule } from './pages/register/register.module';
+import { AuthGuard } from './auth.guard';
+import { AuthInterceptor } from './auth.interceptor';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,10 +32,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    LoginModule,
+    RegisterModule
   ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
+      ..AuthGuard,
+    { provide: APP_BASE_HREF, useValue: '/' }
   ],
 })
 export class AppModule {

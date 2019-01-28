@@ -22,7 +22,6 @@ export class CustomerListComponent implements OnInit {
     }
 
     ngOnInit() {
-        //this._usertoken = JSON.parse(localStorage.getItem('btclogin'));
         this.config.GetConfig()
             .subscribe(
                 data => {

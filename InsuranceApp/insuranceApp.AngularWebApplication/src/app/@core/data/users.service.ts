@@ -1,38 +1,55 @@
-
-import { of as observableOf,  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Body } from "@angular/http/src/body";
+import {ResponseContentType} from "@angular/http";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
 
-
-let counter = 0;
+import { LoginInfo, CoverageType, BaseResponse } from '../models/genericModels';
 
 @Injectable()
 export class UserService {
 
-  private users = {
-    nick: { name: 'Nick Jones', picture: 'assets/images/nick.png' },
-    eva: { name: 'Eva Moor', picture: 'assets/images/eva.png' },
-    jack: { name: 'Jack Williams', picture: 'assets/images/jack.png' },
-    lee: { name: 'Lee Wong', picture: 'assets/images/lee.png' },
-    alan: { name: 'Alan Thompson', picture: 'assets/images/alan.png' },
-    kate: { name: 'Kate Martinez', picture: 'assets/images/kate.png' },
-  };
+    private constants: string;
 
-  private userArray: any[];
+    constructor(private http: Http, private options: RequestOptions) { }
 
-  constructor() {
-    // this.userArray = Object.values(this.users);
-  }
+    userAuthentication(apiUrl, user) {
+        var data = "username=" + user.email + "&password=" + user.password + "&grant_type=password";
+        var reqHeader = new Headers({ 'Content-Type': 'application/x-www-urlencoded', 'No-Auth': 'True' });
+        return this.http.post(apiUrl + '/token', data, { headers: reqHeader })
+            .map((response: Response) => <any>response.json())
+            .catch(e => {
+                console.log(e);
+            });
+    }
 
-  getUsers(): Observable<any> {
-    return observableOf(this.users);
-  }
+    register(apiUrl: string, input: LoginInfo): Observable<BaseResponse> {
+        return this.http.post(apiUrl + '/api/Account/Register', input, this.options)
+            .map((response: Response) => <any>response.json())
+            .catch(e => {
+                console.log(e);
+            });
+    }
 
-  getUserArray(): Observable<any[]> {
-    return observableOf(this.userArray);
-  }
+    getUser(apiUrl: string): Observable<BaseResponse> {
+        let token = localStorage.getItem('userToken');
+        this.options.headers.set('Authorization', 'Bearer ' + token);
+        return this.http.get(apiUrl + '/api/Account/UserInfo', this.options)
+            .map((response: Response) => <LoginInfo>response.json())
+            .catch(e => {
+                console.log(e);
+            });
+    }
 
-  getUser(): Observable<any> {
-    counter = (counter + 1) % this.userArray.length;
-    return observableOf(this.userArray[counter]);
-  }
+    logOut() {
+        localStorage.removeItem('userToken');
+    }
+
+    private handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error.json().ExceptionMessage || 'Server Error');
+    }
 }

@@ -9,6 +9,7 @@ import { CustomerEditComponent } from './customers/customer-edit/customer-edit.c
 import { InsuranceListComponent } from './insurances/insurance-list/insurance-list.component';
 import { InsuranceAddComponent } from './insurances/insurance-add/insurance-add.component';
 import { InsuranceEditComponent } from './insurances/insurance-edit/insurance-edit.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [{
   path: '',
@@ -16,32 +17,39 @@ const routes: Routes = [{
   children: [
     {
       path: 'customers',
-      component: CustomerListComponent
+      component: CustomerListComponent,
+      canActivate: [AuthGuard]
     },
     {
         path: 'customers/create',
-        component: CustomerAddComponent
+        component: CustomerAddComponent,
+        canActivate:[AuthGuard]
     },
     {
         path: 'customers/edit/:id',
-        component: CustomerEditComponent
+        component: CustomerEditComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'insurance',
-        component: InsuranceListComponent
+        component: InsuranceListComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'insurance/create',
-        component: InsuranceAddComponent
+        component: InsuranceAddComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'insurance/edit/:id',
-        component: InsuranceEditComponent
+        component: InsuranceEditComponent,
+        canActivate: [AuthGuard]
     },
     {
       path: '',
       redirectTo: 'customers',
       pathMatch: 'full',
+      canActivate: [AuthGuard]
     },
   ],
 }];

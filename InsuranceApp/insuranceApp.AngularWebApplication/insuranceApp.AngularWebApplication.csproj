@@ -118,6 +118,8 @@
     <Content Include="src\app\pages\insurances\insurance-edit\insurance-edit.component.html" />
     <Content Include="src\app\pages\insurances\insurance-list\insurance-list.component.html" />
     <Content Include="src\app\pages\miscellaneous\not-found\not-found.component.scss" />
+    <Content Include="src\app\pages\login\login.component.html" />
+    <Content Include="src\app\pages\register\register.component.html" />
     <Content Include="src\assets\data\news.json" />
     <Content Include="src\assets\leaflet-countries\countries.geo.json" />
     <Content Include="src\assets\map\world.json" />
@@ -191,6 +193,8 @@
     <TypeScriptCompile Include="src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\auth.guard.ts" />
+    <TypeScriptCompile Include="src\app\auth.interceptor.ts" />
     <TypeScriptCompile Include="src\app\pages\customers\customer-add\customer-add.component.ts" />
     <TypeScriptCompile Include="src\app\pages\customers\customer-edit\customer-edit.component.ts" />
     <TypeScriptCompile Include="src\app\pages\customers\customer-list\customer-list.component.ts" />
@@ -201,6 +205,7 @@
     <TypeScriptCompile Include="src\app\pages\insurances\insurance-edit\insurance-edit.component.ts" />
     <TypeScriptCompile Include="src\app\pages\insurances\insurance-list\insurance-list.component.ts" />
     <TypeScriptCompile Include="src\app\pages\insurances\insurance.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\login\login.module.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous-routing.module.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous.component.ts" />
     <TypeScriptCompile Include="src\app\pages\miscellaneous\miscellaneous.module.ts" />
@@ -209,6 +214,10 @@
     <TypeScriptCompile Include="src\app\pages\pages-routing.module.ts" />
     <TypeScriptCompile Include="src\app\pages\pages.component.ts" />
     <TypeScriptCompile Include="src\app\pages\pages.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\login\login.component.ts" />
+    <None Include="src\app\pages\register\register.component .scss" />
+    <TypeScriptCompile Include="src\app\pages\register\register.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\register\register.module.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

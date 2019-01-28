@@ -21,7 +21,7 @@ namespace insuranceApp.WebApi.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("InsuranceAppConnectionString", throwIfV1Schema: false)
         {
         }
         

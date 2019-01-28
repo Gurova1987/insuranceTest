@@ -9,40 +9,31 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 
+import { LoginComponent } from 'app/pages/login/login.component'; 
+import { RegisterComponent } from 'app/pages/register/register.component';
+
 const routes: Routes = [
-  { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
-  {
-    path: 'auth',
-    component: NbAuthComponent,
-    children: [
-      {
-        path: '',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'login',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'register',
-        component: NbRegisterComponent,
-      },
-      {
-        path: 'logout',
-        component: NbLogoutComponent,
-      },
-      {
-        path: 'request-password',
-        component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },
-    ],
-  },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+    { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
+    {
+        path: 'auth',
+        component: NbAuthComponent,
+        children: [
+            {
+                path: '',
+                component: NbLoginComponent,
+            },
+            {
+                path: 'login',
+                component: LoginComponent,
+            },
+            {
+                path: 'register',
+                component: RegisterComponent,
+            },
+        ]
+    },
+    { path: '', redirectTo: 'pages', pathMatch: 'full' },
+    { path: '**', redirectTo: 'pages' },
 ];
 
 const config: ExtraOptions = {

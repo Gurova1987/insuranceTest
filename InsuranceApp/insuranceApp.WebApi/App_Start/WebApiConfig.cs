@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using System.Web.Http.Cors;
 using Autofac.Integration.WebApi;
 using Microsoft.Owin.Security.OAuth;
 
@@ -8,6 +9,10 @@ namespace insuranceApp.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            // Enable cors
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();

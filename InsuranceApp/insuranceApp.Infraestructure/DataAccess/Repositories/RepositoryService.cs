@@ -53,6 +53,8 @@ namespace insuranceApp.Infraestructure.DataAccess.Repositories
                 {
                     throw new ArgumentNullException(nameof(entity));
                 }
+                
+                _dbContext.Entry(entity).State = EntityState.Modified;
                 _dbContext.SaveChanges();
             }
             catch (DbEntityValidationException dbEx)

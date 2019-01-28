@@ -51,7 +51,7 @@ export class CustomerEditComponent implements OnInit {
     }
 
     updateCustomer() {
-        this.customerService.updateCustomer(this.configData.WebApiUrl, this.model)
+        this.customerService.updateCustomer(this.configData.WebApiUrl, this.model.Id, this.model)
             .subscribe(
                 data => {
                     this.model = {}

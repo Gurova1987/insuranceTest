@@ -41,10 +41,10 @@ export class CustomerService {
             });
     }
 
-    updateCustomer(apiUrl: string, input: CustomerModel): Observable<BaseResponse> {
+    updateCustomer(apiUrl: string, id: number, input: CustomerModel): Observable<BaseResponse> {
         //this._options.headers.set('Authorization', 'Bearer ' + token);
         this.options.headers.set('Content-Type', 'application/json');
-        return this.http.put(apiUrl + '/api/Customer', input, this.options)
+        return this.http.put(apiUrl + '/api/Customer/' + id, input, this.options)
             .map((response: Response) => <BaseResponse>response.json())
             .catch(e => {
                 console.log(e);

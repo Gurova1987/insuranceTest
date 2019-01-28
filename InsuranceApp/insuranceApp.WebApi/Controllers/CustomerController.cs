@@ -38,8 +38,9 @@ namespace insuranceApp.WebApi.Controllers
         }
 
         // DELETE: api/Customer/5
-        public void Delete(CustomerDto model)
+        public void Delete(int id)
         {
+            var model = new CustomerDto {Id = id};
             _customerService.Delete(model);
         }
     }

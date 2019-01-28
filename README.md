@@ -11,6 +11,7 @@ This app is a monolithic application composed of NLayer Modules following common
   - insuranceApp.Infraestructure (Data access layer, using repository-pattern, a single Repository Service for all entities)
 
   Additional Notes:
+
     - Application is using 'Autofac' as the DI container
     - Application is using 'AutoMapper' to map dtos and entities
     - As the ORM we are using Entity Framework and Code First
